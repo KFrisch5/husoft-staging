@@ -3,16 +3,16 @@ import React, { createContext, useContext, useReducer } from 'react';
 const StoreContext = createContext();
 
 const INITIAL_STATE = {
-  example: {}
+  activeLocation: ''
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'set-example':
+    case 'set-active-location':
       console.log(action.type, action.example);
       return {
         ...state,
-        exampleState: action.response,
+        activeLocation: action.loc,
       };
       
   }

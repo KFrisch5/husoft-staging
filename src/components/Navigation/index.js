@@ -39,7 +39,7 @@ const NavigationAuth = ({ authUser }) => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="flex-fill">
         <Nav.Link as={Link} to={ROUTES.LANDING}>
-          Landing
+          Dashboard
         </Nav.Link>
         <Nav.Link as={Link} to={ROUTES.HOME}>
           Home
@@ -67,7 +67,7 @@ const NavigationNonAuth = () => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="flex-fill">
         <Nav.Link as={Link} to={ROUTES.LANDING}>
-          Landing
+          Dashboard
         </Nav.Link>
         <Nav.Link as={Link} to={ROUTES.SIGN_IN}>
           Sign In

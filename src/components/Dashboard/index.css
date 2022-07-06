@@ -4,3 +4,70 @@
   flex-direction: column;
   padding: 1em;
 }
+
+.customCard {
+  border: outset;
+  border-width: 7px;
+  padding: 0 20px 20px 20px;
+  margin: 20px;
+  background: white;
+}
+
+.noTopPadding {
+  padding-top: unset;
+}
+
+.graphTitle {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.graphSubTitle {
+  font-size: x-small;
+}
+
+.message_hour {
+  color: red;
+  margin-right: 5px;
+}
+
+.busiestTimeMessage {
+  justify-content: center;
+  display: flex;
+}
+
+.activeTab {
+  color: green !important;
+}
+
+.defaultTab {
+  color: black !important;
+}
+
+.overflow_nowrap {
+  flex-wrap: nowrap !important;
+}
+
+.noColPadding {
+  padding: unset !important;
+}
+.flexGrow2 {
+  flex-grow: 2;
+}
+
+/*----------------------------------booking capacity ---------------*/
+
+.numberDisplay {
+  font-size: xx-large;
+  text-align: center;
+  font-weight: bold;
+}
+
+.extraPaddingRight {
+  padding-right: 30px;
+}
+
+.extraPaddingTop {
+  padding-top: 10px;
+}

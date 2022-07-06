@@ -3,6 +3,7 @@ import {
   BarChart,
   Bar,
   CartesianGrid,
+  Cell,
   XAxis,
   YAxis,
   Tooltip,
@@ -11,12 +12,6 @@ import {
 } from "recharts";
 
 const BarGraph = (props) => {
-  const data = [
-    {name: "Jan", sales: 400, rev: 2400, amt: 2400},
-    {name: "Feb", sales: 500, rev: 2200, amt: 2000},
-    {name: "March", sales: 3500, rev: 2500, amt: 200},
-  ]; 
-
   // barChartProps = {
   //   layout: (default: 'horizontal') | 'vertical',
   //   syncId: string - If any two categorical charts(LineChart, AreaChart, BarChart, ComposedChart) have the same syncId, these two charts can sync the position tooltip, and the startIndex, endIndex of Brush.
@@ -41,17 +36,21 @@ const BarGraph = (props) => {
   // }
 
   return (
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data}>
-              <Bar type="monotone" dataKey="sales" stroke="#8884d8" fill="blue" />
-              <Bar type="monotone" dataKey="rev" stroke="red" />
-              <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend verticalAlign="top" height={36} />
-            </BarChart>
-          </ResponsiveContainer>
+    <ResponsiveContainer width="100%" height={props.height}>
+      <BarChart 
+      data={props.data}
+      >
+        <Bar dataKey="bookings" fill="grey" shape={props.shape} >
+          {props.data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={entry.cellHighlight ? "red" : "#489db8"} />
+        ))}
+        </Bar>
+        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" vertical={false} />
+        <XAxis dataKey="name" />
+        {/* <Tooltip /> */}
+        {/* <Legend verticalAlign="top" height={36} /> */}
+      </BarChart>
+    </ResponsiveContainer>
   );
 };
 

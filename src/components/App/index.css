@@ -1,3 +1,19 @@
 .app-container {
-  
 }
+.centerText {
+  text-align: center;
+}
+
+.displayFlex {
+  display: flex;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+body > iframe {
+  z-index: -1 !important;
+}
+
+

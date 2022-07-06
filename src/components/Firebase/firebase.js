@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/firestore';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -9,6 +10,8 @@ const config = {
   projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: "1:304691772212:web:505c3eab0f973844e84361",
+  measurementId: "G-KJDG1NQKQ6"
 };
 
 class Firebase {
@@ -23,7 +26,7 @@ class Firebase {
     /* Firebase APIs */
 
     this.auth = app.auth();
-    this.db = app.database();
+    this.db = app.firestore();
 
     /* Social Sign In Method Provider */
 
@@ -90,7 +93,9 @@ class Firebase {
 
   user = uid => this.db.ref(`users/${uid}`);
 
-  users = () => this.db.ref('users');
+  users = () => this.db.collection('users').get();
+
+  teeTimes = () => this.db.collection('teetimes').get();
 
 }
 
